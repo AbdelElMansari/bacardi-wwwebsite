@@ -63,5 +63,9 @@
     "*.json": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "install": "^0.13.0",
+    "swiper": "^8.3.2"
   }
 }

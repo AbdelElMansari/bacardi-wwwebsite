@@ -1,32 +1,296 @@
 ---
-pagination:
-  data: collections.posts
-  size: 5
-  alias: list
-  reverse: true
-permalink: '<% if (pagination.pageNumber > 0) { %><%= `page${pagination.pageNumber + 1}/index.html` %><% } else { %>index.html<% } %>'
+
 eleventyComputed:
-  title: '<% if (pagination.pageNumber > 0) { %><%= `Page ${pagination.pageNumber + 1} | ${site.title}` %><% } else { %><%= site.title %><% } %>'
+title: '<%= site.title %>'
 ---
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
 
-<ul>
-  <% list.forEach((post) => { %>
-  <li class="mb-3 flex justify-between">
-    <a href="<%= post.url %>"><%= post.data.title %></a>
+  const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
 
-    <div><%= this.dateFns.format(new Date(post.data.date), 'LLLL d, yyyy') %></div>
-  </li>
-  <% }) %>
-</ul>
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
 
-<div class="text-sm flex justify-between">
-  <% if (pagination.previous) { %>
-  <div>
-    <a href="<%= pagination.previous.replace(/index.html$/, "") %>">← Newer Posts</a>
+  // Navigation arrows
+ 
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
+<main class="">
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide bacardi__intro relative">
+        <span class="sd__card text-center block text-white pt-4">LA CARTE SON</span>
+        <img class=" mx-auto" src="/assets/images/logo-bacardi.svg">
+        <hr class="w-1/2 mx-auto border-2 rounded-xl mt-3">
+        <span class="sd__title text-center text-white block mt-4 leading-none">THE SOUND OF RUM</span>
+
+        <div class="sd__case mx-auto  relative border-4 border-red-600">
+          <iframe src="https://player.vimeo.com/video/735430201?h=e8ba9ee4ac?autoplay=1&loop=1&autopause=1&autopause=0"
+            frameborder="0" allow="autoplay" allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            title="BacardiXVICE_10s_1-1_NOSub_V2.mp4"></iframe>
+        </div>
+
+        <p class="sd__description text-white block uppercase text-center leading-tight pb-4">
+          GRâce à CETTE CARTE SONORE,<br>
+          DÉCOUVREZ LE SON QUI CORRESPOND <br>
+          à CHAQUE COCKTAIL BACARDI<br>
+          CRÉE SUR MESURE<br>
+          EN COLLABORATION ENTRE<br> LA DJ/BEATMAKEUSE ANAÏS B.<br>
+          ET LE BARTENDER ROMAIN.</p>
+        <p class="sd__description text-white block uppercase text-center leading-tight pb-4">
+
+          CHAQUE INGRÉDIENT, <br>
+          CHAQUE ÉTAPE DU COCKATIL <br>
+          A ÉTÉ LE FRUIT D’UN MIX INÉdiT.
+        </p>
+        <div class="flex gap-1 absolute left-0 right-0 bottom-6 justify-between w-5/6 mx-auto items-center">
+          <div class="text-white sd__ft__size">
+            <?xml version="1.0" encoding="UTF-8"?><svg class="w-8" id="Mode_Isolation"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.97 69.55">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #fff;
+                  }
+                </style>
+              </defs>
+              <polygon class="cls-1"
+                points="26.48 0 0 26.48 22.71 26.48 22.71 69.55 30.26 69.55 30.26 26.48 52.97 26.48 26.48 0" />
+            </svg></div>
+          <div><span class="text-white sd__ft">SWIPE UP</span></div>
+          <div class="text-white sd__ft__size">
+            <?xml version="1.0" encoding="UTF-8"?><svg class="w-8" id="Mode_Isolation"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.97 69.55">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #fff;
+                  }
+                </style>
+              </defs>
+              <polygon class="cls-1"
+                points="26.48 0 0 26.48 22.71 26.48 22.71 69.55 30.26 69.55 30.26 26.48 52.97 26.48 26.48 0" />
+            </svg></div>
+        </div>
+      </div>
+      <div class="swiper-slide relative h-screen">
+        <div class="motion__intro__bars">
+          <span class="motion__intro__bars__active"></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="motion__intro">
+          <span class="motion__number">01</span>
+          <h2 class="motion__title">CARIBBEAN MULE REMIX</h2>
+          <span class="motion__subtitle">BY ANAIS B & ROMAIN</span>
+        </div>
+        <div class="motion__footer absolute bottom-5 left-0 right-0">
+          <img class=" mx-auto" src="/assets/images/logo-bacardi-only.svg">
+          <div class="motion__player py-3 text-center text-white">
+            <div class="motion__player__container">
+              <span class="uppercase flex items-center leading-none">Now Playing</span>
+              <p class="uppercase">Anaïs B</p>
+            </div>
+          </div>
+          <div class="motion__footer__swiper flex gap-1 justify-between w-2/3 mx-auto items-center">
+            <div class="text-white text-base sd__ft__size">
+              <?xml version="1.0" encoding="UTF-8"?><svg class="w-8" id="Mode_Isolation"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.97 69.55">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: #fff;
+                    }
+                  </style>
+                </defs>
+                <polygon class="cls-1"
+                  points="26.48 0 0 26.48 22.71 26.48 22.71 69.55 30.26 69.55 30.26 26.48 52.97 26.48 26.48 0" />
+              </svg></div>
+            <div><span class="text-white sd__ft__m text-center uppercase leading-tight block ">swipe pour Écouter<br>
+                le cocktail suivant</span></div>
+            <div class="text-white text-base sd__ft__size">
+              <?xml version="1.0" encoding="UTF-8"?><svg class="w-8" id="Mode_Isolation"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.97 69.55">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: #fff;
+                    }
+                  </style>
+                </defs>
+                <polygon class="cls-1"
+                  points="26.48 0 0 26.48 22.71 26.48 22.71 69.55 30.26 69.55 30.26 26.48 52.97 26.48 26.48 0" />
+              </svg></div>
+
+          </div>
+
+        </div>
+
+     
+          <div class="bg-video vimeo-wrapper ">
+            <!-- <iframe src="https://player.vimeo.com/video/735466038?h=e8ba9ee4ac?autoplay=1&loop=1&autopause=1&autopause=0" frameborder="0" allow="autoplay" allowfullscreen  title="BacardiXVICE_10s_1-1_NOSub_V2.mp4"></iframe>
+        --></div>
+    </div>
+    <div class="swiper-slide relative h-screen">
+      <div class="motion__intro__bars">
+        <span></span>
+        <span class="motion__intro__bars__active"></span>
+        <span></span>
+      </div>
+      <div class="motion__intro">
+        <span class="motion__number">02</span>
+        <h2 class="motion__title">SOUND OF PUNCH</h2>
+        <span class="motion__subtitle">BY ANAIS B & ROMAIN</span>
+      </div>
+      <div class="motion__footer absolute bottom-5 left-0 right-0">
+        <img class=" mx-auto" src="/assets/images/logo-bacardi-only.svg">
+        <div class="motion__player py-3 text-center text-white">
+          <div class="motion__player__container">
+            <span class="uppercase flex items-center leading-none">Now Playing</span>
+            <p class="uppercase">Anaïs B</p>
+          </div>
+        </div>
+        <div class="motion__footer__swiper flex gap-1 justify-between w-2/3 mx-auto items-center">
+          <div class="text-white text-base sd__ft__size">
+            <?xml version="1.0" encoding="UTF-8"?><svg class="w-8" id="Mode_Isolation"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.97 69.55">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #fff;
+                  }
+                </style>
+              </defs>
+              <polygon class="cls-1"
+                points="26.48 0 0 26.48 22.71 26.48 22.71 69.55 30.26 69.55 30.26 26.48 52.97 26.48 26.48 0" />
+            </svg></div>
+          <div><span class="text-white sd__ft__m text-center uppercase leading-tight block ">swipe pour Écouter<br>
+              le cocktail suivant</span></div>
+          <div class="text-white text-base sd__ft__size">
+            <?xml version="1.0" encoding="UTF-8"?><svg class="w-8" id="Mode_Isolation"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.97 69.55">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #fff;
+                  }
+                </style>
+              </defs>
+              <polygon class="cls-1"
+                points="26.48 0 0 26.48 22.71 26.48 22.71 69.55 30.26 69.55 30.26 26.48 52.97 26.48 26.48 0" />
+            </svg></div>
+
+        </div>
+
+      </div>
+
+   
+        <div class="bg-video vimeo-wrapper ">
+          <!-- <iframe src="https://player.vimeo.com/video/735466038?h=e8ba9ee4ac?autoplay=1&loop=1&autopause=1&autopause=0" frameborder="0" allow="autoplay" allowfullscreen  title="BacardiXVICE_10s_1-1_NOSub_V2.mp4"></iframe>
+      --></div>
   </div>
-  <% } %> <% if (pagination.next) { %>
-  <div class="text-right ml-auto">
-    <a href="<%= pagination.next.replace(/index.html$/, "") %>">Older Posts →</a>
-  </div>
-  <% } %>
+  <div class="swiper-slide relative h-screen">
+    <div class="motion__intro__bars">
+      <span class="motion__intro__bars__active"></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="motion__intro">
+      <span class="motion__number">03</span>
+      <h2 class="motion__title">PURPLE MELODY</h2>
+      <span class="motion__subtitle">BY ANAIS B & ROMAIN</span>
+    </div>
+    <div class="motion__footer absolute bottom-5 left-0 right-0">
+      <img class=" mx-auto" src="/assets/images/logo-bacardi-only.svg">
+      <div class="motion__player py-3 text-center text-white">
+        <div class="motion__player__container">
+          <span class="uppercase flex items-center leading-none">Now Playing</span>
+          <p class="uppercase">Anaïs B</p>
+        </div>
+      </div>
+      <div class="motion__footer__swiper flex gap-1 justify-between w-2/3 mx-auto items-center">
+        <div class="text-white text-base sd__ft__size">
+          <?xml version="1.0" encoding="UTF-8"?><svg class="w-8" id="Mode_Isolation"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.97 69.55">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <polygon class="cls-1"
+              points="26.48 0 0 26.48 22.71 26.48 22.71 69.55 30.26 69.55 30.26 26.48 52.97 26.48 26.48 0" />
+          </svg></div>
+        <div><span class="text-white sd__ft__m text-center uppercase leading-tight block ">swipe pour Écouter<br>
+            le cocktail suivant</span></div>
+        <div class="text-white text-base sd__ft__size">
+          <?xml version="1.0" encoding="UTF-8"?><svg class="w-8" id="Mode_Isolation"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.97 69.55">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <polygon class="cls-1"
+              points="26.48 0 0 26.48 22.71 26.48 22.71 69.55 30.26 69.55 30.26 26.48 52.97 26.48 26.48 0" />
+          </svg></div>
+
+      </div>
+
+    </div>
+
+ 
+      <div class="bg-video vimeo-wrapper ">
+        <!-- <iframe src="https://player.vimeo.com/video/735466038?h=e8ba9ee4ac?autoplay=1&loop=1&autopause=1&autopause=0" frameborder="0" allow="autoplay" allowfullscreen  title="BacardiXVICE_10s_1-1_NOSub_V2.mp4"></iframe>
+    --></div>
 </div>
+<div class="swiper-slide bacardi__intro relative">
+  <span class="sd__card text-center block text-white pt-4">LA CARTE SON</span>
+  <img class=" mx-auto" src="/assets/images/logo-bacardi.svg">
+  <hr class="w-1/2 mx-auto border-2 rounded-xl mt-3">
+  <span class="sd__title text-center text-white block mt-4 leading-none">THE SOUND OF RUM</span>
+
+ 
+ 
+  <div class="flex gap-1 absolute left-0 right-0 bottom-6 justify-between w-5/6 mx-auto items-center">
+   
+    <div><span class="text-white sd__description uppercase">L’ABUS D’ALCOOL EST DANGEUREUX POUR LA SANTÉ. <br>à consommer avec modÉration.</span></div>
+    
+  </div>
+</div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+  </div>
+
+</main>
+
+<style>
+  .swiper {
+    width: 100%;
+    height: 100vh;
+  }
+</style>

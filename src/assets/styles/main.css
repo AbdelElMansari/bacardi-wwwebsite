@@ -1,5 +1,13 @@
 @tailwind base;
+@import url("https://use.typekit.net/apm5emm.css");
 
+*{
+  margin: 0;
+  padding: 0;
+  font-family: monotype-grotesque-display-e, sans-serif;
+font-weight: 700;
+font-style: normal;
+}
 a {
   @apply text-blue-700;
 }
@@ -83,4 +91,154 @@ a:hover {
 
 .content th {
   @apply bg-gray-100;
+}
+
+ 
+.bacardi__intro{
+  background-image:url('../images/bg-bacardi.png');    
+  width: 100%;  
+  
+  background-size: cover;
+  background-position: center;
+}  
+
+.sd__card{
+  font-size: 2vh;
+}
+.sd__title{
+  font-size: 3.2vh;
+}
+.sd__case{
+  width: 30vh;
+  height: 30vh;
+  margin: 7vh auto;
+}
+.sd__description{
+  font-size: 1.5vh;
+}
+
+.sd__ft{
+  font-size: 4.5vh;
+}
+.sd__ft__size{
+  width: 4.5vh;
+}
+.sd__ft__m{
+  font-size: 1.5vh;
+}
+.bacardi__intro img{
+  height: auto;
+  width: 40vh;
+  
+}
+.vimeo-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.vimeo-wrapper iframe {
+  width: 100vw;
+  height: 67.25vw;
+  min-height: 100vh;
+  min-width: 177.77vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.motion__intro{
+  padding: 1vh 0;
+  z-index: 9;
+  font-size: 3.5vh;
+  position: relative;
+  color: #fff;
+  width: 90%;
+  margin: 0 auto;
+  line-height: 1;
+ 
+}
+.motion__intro__bars{
+  display: flex;
+  gap: 0.5rem;
+  z-index: 99;
+  /* position: absolute; */
+ 
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 3vh;
+
+}
+.motion__intro__bars span{
+  flex:1;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 10px;
+  align-items: center;
+}
+.motion__intro__bars__active{
+  height: 4px!important;
+}
+.motion__number{
+  font-weight: 100;
+  font-size: 3vh;
+}
+.motion__title{
+ font-weight: 800;
+ text-transform: uppercase;
+ font-size: 3vh;
+}
+
+.motion__title::after{
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='OVERLAY' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 39.89 50.72'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cpath class='cls-1' d='M39.52,0c.14,1.11,.37,2.08,.37,3.05,0,11.51,.02,23.02-.07,34.53-.04,5.46-3.22,8.18-8.74,7.83-2.89-.18-4.62-1.75-5.05-4.5-.42-2.7,.56-4.93,3.3-5.9,2.58-.92,5.23-1.64,7.89-2.45V11.57l-23.18,4.69c0,2.4,0,4.32,0,6.24,0,6.68,.09,13.36,0,20.04-.07,5.1-2.21,7.44-7.04,8.09-3.35,.45-5.99-1.08-6.76-3.95-.82-3.01,.76-5.82,4.08-6.92,2.3-.76,4.69-1.27,7.3-1.95V6.08C20.88,4.06,29.9,2.1,39.52,0Z'/%3E%3C/svg%3E");
+  content: '';
+  /* font-size: 10px; */
+  height: 3vh;
+  width: 3vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 0 1vh;
+}
+.motion__subtitle{
+  font-size: 1.75vh;
+}
+
+.motion__player__container{
+  display: inline-flex;
+    border: 1px solid #fff;
+    justify-content: center;
+    width: auto;
+    padding: 0.5vh 4vw;
+    border-radius: 2vh;
+    align-items: center;
+}
+
+.motion__footer img{
+  width: 10vh;
+  height: auto;
+}
+
+.motion__player__container span{
+  font-size: 1vh;
+}
+.motion__player__container span::after{
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='OVERLAY' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 39.89 50.72'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cpath class='cls-1' d='M39.52,0c.14,1.11,.37,2.08,.37,3.05,0,11.51,.02,23.02-.07,34.53-.04,5.46-3.22,8.18-8.74,7.83-2.89-.18-4.62-1.75-5.05-4.5-.42-2.7,.56-4.93,3.3-5.9,2.58-.92,5.23-1.64,7.89-2.45V11.57l-23.18,4.69c0,2.4,0,4.32,0,6.24,0,6.68,.09,13.36,0,20.04-.07,5.1-2.21,7.44-7.04,8.09-3.35,.45-5.99-1.08-6.76-3.95-.82-3.01,.76-5.82,4.08-6.92,2.3-.76,4.69-1.27,7.3-1.95V6.08C20.88,4.06,29.9,2.1,39.52,0Z'/%3E%3C/svg%3E");
+  content: '';
+  /* font-size: 10px; */
+  height: 2vh;
+  width: 2vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 0 1vh;
+  vertical-align: middle;
 }

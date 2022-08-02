@@ -49,7 +49,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'images/posts/[name].[ext]',
+              name: 'assets/images/[name].[ext]',
             },
           },
           {
@@ -57,13 +57,13 @@ module.exports = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 65,
+                quality: 100,
               },
               // optipng.enabled: false will disable optipng
               optipng: {
                 enabled: false,
               },
-              pngquant: {
+              pngquant: { 
                 quality: [0.65, 0.9],
                 speed: 4,
               },
