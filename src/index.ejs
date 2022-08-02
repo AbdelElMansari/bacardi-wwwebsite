@@ -4,6 +4,14 @@ eleventyComputed:
 title: '<%= site.title %>'
 ---
 <script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+}
+window.addEventListener('resize', appHeight)
+appHeight()
+</script>
 <script type="module">
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
 
