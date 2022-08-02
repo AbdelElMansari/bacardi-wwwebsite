@@ -112,7 +112,11 @@ a:hover {
   @apply bg-gray-100;
 }
 
- 
+.swiper {
+  width: 100%;
+  height: var(--app-height);
+}
+
 .bacardi__intro{
   background-image:url('../images/bg-bacardi.png');    
   width: 100%;  
@@ -120,7 +124,25 @@ a:hover {
   background-size: cover;
   background-position: center;
 }  
-
+.swiper-slide::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #000 0%, #fff0 5%);
+ 
+}
+.swiper-slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #0000 95%, #000 100%);
+}
 .sd__card{
   font-size: 2vh;
 }
@@ -133,7 +155,7 @@ a:hover {
   margin: 7vh auto;
 }
 .sd__description{
-  font-size: 1.5vh;
+  font-size: 1.25vh;
 }
 
 .sd__ft{
@@ -145,6 +167,18 @@ a:hover {
 .sd__ft__m{
   font-size: 1.5vh;
 }
+.bacardi__bottle{
+  margin: 0 auto;
+  height: 60vh!important;
+  width: auto!important;
+  padding: 4vh 0;
+  text-align: center;
+  display: flex;
+  /* box-shadow: 7px 7px 8px 1px black; */
+  /* backdrop-filter: drop-shadow(3px 3px black); */
+  filter: drop-shadow(12px 12px 6px #222);
+
+}
 .bacardi__intro img{
   height: auto;
   width: 40vh;
@@ -154,6 +188,60 @@ a:hover {
   height: auto;
   width: 40vh;
   
+}
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }
 .vimeo-wrapper {
   position: absolute;
