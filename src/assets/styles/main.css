@@ -131,8 +131,13 @@ a:hover {
   width: 40vh;
   
 }
+.bacardi__last img{
+  height: auto;
+  width: 40vh;
+  
+}
 .vimeo-wrapper {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
