@@ -12,6 +12,8 @@ title: '<%= site.title %>'
 window.addEventListener('resize', appHeight)
 appHeight()
 </script>
+
+
 <script type="module">
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
 
@@ -34,7 +36,16 @@ appHeight()
   },
 });
 </script>
-<main class="">
+<main class="bacardi__main">
+  <div class="fixed__18" id="#fixed18">
+      <div class="b18__block">
+        <p>Je confirme avoir + de 18 ans</p>
+        <div class="yes__no">
+          <button id="button_yes">OUI</button>
+          <button id="button_no">NON</button>
+        </div>
+      </div>
+  </div>
   <div class="swiper">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
@@ -46,7 +57,7 @@ appHeight()
         <span class="sd__title text-center text-white block mt-4 leading-none">THE SOUND OF RUM</span>
 
         <div class="sd__case mx-auto  relative border-4 border-red-600">
-          <iframe src="https://player.vimeo.com/video/735864578?h=99f540b6e3&badge=1&autoplay=1&loop=1&muted=1&background=1&player_id=1title=0&byline=0"
+          <iframe id="video_first" src="https://player.vimeo.com/video/735864578?h=99f540b6e3&badge=1&autoplay=1&loop=1&muted=1&background=1&player_id=1title=0&byline=0"
           frameborder="0" allow="autoplay"  style="position:absolute;top:0;left:0;width:100%;height:100%;"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
            
         </div>
@@ -299,3 +310,31 @@ appHeight()
 <style>
 
 </style>
+<script>
+  const iframe = document.querySelector('iframe');
+   const player = new Vimeo.Player(iframe);
+   
+   const box = document.getElementById('#fixed18');
+
+console.log(box); // 👉️ the div element
+
+// ✅ works
+
+     player.on('play', function() {
+         console.log('played the video!');
+     });
+
+     player.getVideoTitle().then(function(title) {
+         console.log('title:', title);
+     });
+
+   document.getElementById('button_yes').onclick = function() {
+     
+     console.log('ACTIVE SON');
+     player.setMuted(false);
+      box.style.display='none';
+     console.log(box)
+   }​;​
+
+
+</script>

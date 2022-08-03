@@ -112,6 +112,38 @@ a:hover {
   @apply bg-gray-100;
 }
 
+.fixed__18{
+  position: fixed;
+  background-color: #000000b8;
+  height: var(--app-height);
+  top: 0;
+  left: 0; 
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.b18__block p{
+ color: white;
+ text-transform: uppercase;
+ padding-bottom: 1.5vh;
+}
+.yes__no{
+  display: flex;
+    justify-content: space-around;
+}
+
+.yes__no button{
+  padding: 1vh 2vw;
+  border: 2px solid white;
+  color: white;
+  text-transform: uppercase;
+}
+
 .swiper {
   width: 100%;
   height: var(--app-height);
