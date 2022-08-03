@@ -327,7 +327,7 @@ console.log(box); // 👉️ the div element
   const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'vertical',
-  loop: true,
+ 
 
   // If we need pagination
   pagination: {
@@ -343,9 +343,12 @@ console.log(box); // 👉️ the div element
   },
 });
 swiper.on('slideChange', function () {
-  getiframe = $('.swiper-slide-active').find('iframe');
-  const player = new Vimeo.Player(getiframe);
-  player.setMuted(false);
+ 
+  const iframenow = $('.swiper-slide-active iframe')
+  const playernow = new Vimeo.Player(iframenow);
+  console.log(iframenow);
+  console.log(playernow);
+  playernow.setMuted(false);
   console.log('slide changed');
 });
 </script>
