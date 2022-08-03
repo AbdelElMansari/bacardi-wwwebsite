@@ -4,6 +4,8 @@ eleventyComputed:
 title: '<%= site.title %>'
 ---
 <script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <script>
   const appHeight = () => {
     const doc = document.documentElement
@@ -14,28 +16,7 @@ appHeight()
 </script>
 
 
-<script type="module">
-  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
-
-  const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
  
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-</script>
 <main class="bacardi__main">
   <div class="fixed__18" id="#fixed18">
       <div class="b18__block">
@@ -336,5 +317,35 @@ console.log(box); // 👉️ the div element
      console.log(box)
    }​;​
 
+  
 
+
+</script>
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
+
+  const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+ 
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+swiper.on('slideChange', function () {
+  getiframe = $('.swiper-slide-active').find('iframe');
+  const player = new Vimeo.Player(getiframe);
+  player.setMuted(false);
+  console.log('slide changed');
+});
 </script>
