@@ -152,10 +152,11 @@ a:hover {
 .sd__case{
   width: 30vh;
   height: 30vh;
-  margin: 7vh auto;
+  margin: 5vh auto;
 }
 .sd__description{
   font-size: 1.25vh;
+  padding-bottom: 1vh;
 }
 
 .sd__ft{
